@@ -1,2 +1,3 @@
-# ocickle-auth-python
-Ocickle Auth Python SDK
+# Ocickle Auth Python SDK
+
+This repository adds a minimal Python SDK for the Ocickle Auth API.
