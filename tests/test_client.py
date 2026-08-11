@@ -35,7 +35,7 @@ class ClientTests(unittest.TestCase):
         self.assertEqual(resp["access_token"], "abc")
         self.assertEqual(self.client.access_token, "abc")
 
-        # login sends `identifier`, can either `email`/`username`
+        # login sends `identifier`, can either be `email`/`username`
         _, kwargs = mock_request.call_args
         self.assertEqual(kwargs["json"], {"identifier": "johndoe", "password": "pass"})
         args, _ = mock_request.call_args
