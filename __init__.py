@@ -1,15 +1,26 @@
 """Ocickle Auth SDK
 
-Lightweight Python SDK for interacting with the Ocickle Auth API.
+Python SDK for the Ocickle Auth API (https://api.auth.ocickle.com).
 """
 
 from .client import OcickleAuthClient
-from .exceptions import OcickleError, AuthenticationError, APIError, ConnectionError
+from .config import Config
+from .exceptions import (
+    APIError,
+    AuthenticationError,
+    ConnectionError,
+    NotFoundError,
+    OcickleError,
+    ValidationError,
+)
 
 __all__ = [
     "OcickleAuthClient",
+    "Config",
     "OcickleError",
     "AuthenticationError",
+    "ValidationError",
+    "NotFoundError",
     "APIError",
     "ConnectionError",
 ]
