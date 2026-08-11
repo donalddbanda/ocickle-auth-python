@@ -3,9 +3,9 @@
 Python SDK for the Ocickle Auth API (https://api.auth.ocickle.com).
 """
 
-from .ocickle_auth_python.client import OcickleAuthClient
-from .ocickle_auth_python.config import Config
-from .ocickle_auth_python.exceptions import (
+from .client import OcickleAuthClient
+from .config import Config
+from .exceptions import (
     APIError,
     AuthenticationError,
     ConnectionError,
