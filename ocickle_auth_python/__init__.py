@@ -24,3 +24,6 @@ __all__ = [
     "APIError",
     "ConnectionError",
 ]
+
+
+from .oauth import OAuthClient

@@ -42,14 +42,17 @@ class OcickleAuthClient:
         self._session = requests.Session()
         self._access_token: Optional[str] = None
         if self._config.api_key:
-            self._session.headers.update({"Authorization": f"Bearer {self._config.api_key}"})
+            self._session.headers.update({"X-API-Key": self._config.api_key})
 
     @property
     def access_token(self) -> Optional[str]:
         return self._access_token
 
     def _url(self, path: str) -> str:
-        return f"{self._config.base_url.rstrip('/')}/{path.lstrip('/')}"
+        base = self._config.base_url.rstrip("/")
+        if base.endswith("/v1"):
+            base = base[:-3]
+        return f"{base}/{path.lstrip('/')}"
 
     def _auth_headers(self, access_token: Optional[str]) -> Dict[str, str]:
         token = access_token or self._access_token
@@ -248,3 +251,4 @@ class OcickleAuthClient:
     def health(self) -> Dict[str, Any]:
         """GET /v1/health"""
         return self._request("GET", "/v1/health")
+

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ocickle-auth-python"
-version = "0.1.0"
+version = "0.2.0"
 description = "Python SDK for Ocickle Auth API"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -23,7 +23,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Operating System :: OS Independent",
 ]
-dependencies = ["requests>=2.25"]
+dependencies = ["requests>=2.25", "PyJWT[crypto]>=2.8,<3"]
 
 [project.urls]
 Homepage = "https://github.com/donalddbanda/ocickle-auth-python"
@@ -33,3 +33,4 @@ Issues = "https://github.com/donalddbanda/ocickle-auth-python/issues"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["ocickle_auth_python*"]
+
